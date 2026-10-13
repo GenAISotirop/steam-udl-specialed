@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Διδάσκοντες/ουσες · STEAM · UDL · Ειδική Αγωγή</title>
+  <meta name="description" content="Οδηγός διδασκόντων: χρονισμός, απαντήσεις στο εργαστήριο, σημεία συζήτησης για τα παραδείγματα.">
+  <link rel="stylesheet" href="assets/style.css">
+  
+</head>
+<body>
+<div id="password-gate">
+  <div class="gate-card">
+    <div class="gate-icon">🔒</div>
+    <h1 class="gate-title">Υλικό για <span class="hand">διδάσκοντες/ουσες</span></h1>
+    <p class="gate-msg">Αν <em>βρέθηκες εδώ κατά λάθος</em>, γύρνα στην αρχική.</p>
+    <p class="gate-msg">Αλλιώς, <strong>γράψε τον κωδικό</strong> για να συνεχίσεις:</p>
+    <div class="gate-form">
+      <input type="password" id="gate-password" class="gate-input" placeholder="• • • • • • •" autocomplete="off">
+      <button onclick="checkPassword()" class="gate-btn">Είσοδος <span class="arrow">→</span></button>
+      <p id="gate-error" class="gate-error">Λάθος κωδικός. Δοκίμασε ξανά.</p>
+    </div>
+    <a href="index.html" class="gate-back">← Επιστροφή στην αρχική</a>
+  </div>
+</div>
+<script>
+  // ΑΛΛΑΞΕ ΤΟΝ ΚΩΔΙΚΟ ΕΔΩ πριν από την ανάρτηση:
+  const INSTRUCTOR_PASSWORD = "steamudl2026";
+  const GATE_KEY = "instructor_unlocked_steamudl";
+  if (sessionStorage.getItem(GATE_KEY) === 'yes') { document.getElementById('password-gate').style.display = 'none'; } else { document.body.classList.add('gate-locked'); }
+  function checkPassword() {
+    const input = document.getElementById('gate-password');
+    const error = document.getElementById('gate-error');
+    if (input.value === INSTRUCTOR_PASSWORD) {
+      document.getElementById('password-gate').style.display = 'none';
+      document.body.classList.remove('gate-locked');
+      sessionStorage.setItem(GATE_KEY, 'yes');
+    } else {
+      error.classList.add('show'); input.value = '';
+      setTimeout(function () { error.classList.remove('show'); }, 3000);
+    }
+  }
+  document.getElementById('gate-password').addEventListener('keypress', function (e) { if (e.key === 'Enter') { e.preventDefault(); checkPassword(); } });
+  document.getElementById('gate-password').focus();
+</script>
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand"><span class="spark">STEAM</span> · UDL · Ειδική Αγωγή</a>
+    <ul class="nav-links"><li><a href="index.html">Αρχική</a></li><li><a href="program.html">Πρόγραμμα</a></li><li><a href="steam.html">STEAM</a></li><li><a href="udl.html">UDL</a></li><li><a href="connection.html">Η σύνδεση</a></li><li><a href="examples.html">Παραδείγματα</a></li><li><a href="projects.html">Έργα ΕΕ</a></li><li><a href="lab.html">Εργαστήριο</a></li><li><a href="thesis.html">Διπλωματική</a></li><li><a href="materials.html">Υλικό</a></li><li><a href="instructor.html" class="active">Διδάσκοντες/ουσες</a></li></ul>
+  </div>
+</nav>
+
+<header class="hero hero-sm">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <div class="eyebrow fade-up">Για διδάσκοντες/ουσες</div>
+        <h1 class="hero-title fade-up">Οδηγός <span class="hand">διδάσκοντα</span></h1>
+        <p class="hero-subtitle fade-up">Χρονισμός, προτεινόμενες απαντήσεις στο εργαστήριο του φακού, και σημεία συζήτησης για τα παραδείγματα.</p>
+        
+        
+      </div>
+      <div class="hero-illo">
+        <div class="hero-shape shape-1"></div>
+        <div class="hero-shape shape-2"></div>
+        <div class="hero-shape shape-3"></div>
+        <div class="hero-shape shape-4"></div>
+        <div class="hero-label">🎙<br><span>backstage ✦</span></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="tight">
+  <div class="container">
+    <div class="card">
+      <h3>Πριν από το σεμινάριο</h3>
+      <ul class="checks">
+        <li><input type="checkbox"><span>Διάλεξε <strong>δύο</strong> παραδείγματα για την Ενότητα 2. Προτείνω την Aghasafari (2025), για τη συζήτηση των ισχυρισμών, και το ελληνικό με τους κωφούς μαθητές, για το A.</span></li>
+        <li><input type="checkbox"><span>Αν έχεις βρει σενάριο από τα πρακτικά της Ε.Ε.Π.Ε.Κ., μπορεί να αντικαταστήσει το δεύτερο.</span></li>
+        <li><input type="checkbox"><span>Τύπωσε ή στείλε το <a href="downloads/02_Fyllo_Ergastiriou.docx">φύλλο του εργαστηρίου</a> για όσους/ες δεν θέλουν να δουλέψουν online.</span></li>
+        <li><input type="checkbox"><span>Δες ότι ανοίγουν οι σύνδεσμοι των παραδειγμάτων: οι σελίδες ευρωπαϊκών έργων αλλάζουν διευθύνσεις.</span></li>
+      </ul>
+    </div>
+
+    <div class="card c-teal">
+      <h3>UDL ή διαφοροποίηση; (Ενότητα 1, 0:30)</h3>
+      <div class="tbl-wrap"><table class="tbl">
+        <tr><th>Παράδειγμα (στην οθόνη)</th><th>Απάντηση</th></tr>
+        <tr><td>Η εκπαιδευτικός διαπιστώνει ότι ο Πέτρος, που έχει δυσλεξία, δυσκολεύτηκε με τις γραπτές οδηγίες, και για το επόμενο μάθημα του ετοιμάζει ηχογραφημένη εκδοχή.</td><td><strong>Διαφοροποίηση</strong> (προσαρμογή εκ των υστέρων για έναν μαθητή). Καλή πρακτική, αλλά όχι UDL.</td></tr>
+        <tr><td>Οι οδηγίες της δραστηριότητας δίνονται εξαρχής ως κείμενο, ως εικονογραφημένα βήματα και ως ηχογράφηση, και κάθε μαθητής διαλέγει.</td><td><strong>UDL</strong> (Αναπαράσταση · 1. Αντίληψη): σχεδιασμός εκ των προτέρων, για όλους.</td></tr>
+      </table></div>
+    </div>
+
+    <div class="card c-sun">
+      <h3>Εργαστήριο: προτεινόμενες απαντήσεις</h3>
+      <p><strong>Βήμα 1 · Εντοπίζω.</strong></p>
+      <ul>
+        <li><strong>S ναι:</strong> ο ήχος ως δόνηση, σχέση μήκους ή τάσης με το ύψος. Αλλά δίνεται προφορικά, όχι μέσα από διερεύνηση.</li>
+        <li><strong>T μισό:</strong> η εφαρμογή κουρδίσματος είναι εργαλείο μέτρησης, άρα μετράει, αλλά χρησιμοποιείται μόνο για καταγραφή, όχι για βελτίωση.</li>
+        <li><strong>E μισό:</strong> υπάρχει σχεδιασμός και κατασκευή, αλλά <em>όχι</em> δοκιμή και βελτίωση. Η μέτρηση γίνεται μετά την κατασκευή και δεν οδηγεί σε αλλαγή.</li>
+        <li><strong>A μάλλον υπηρετικό:</strong> η ορχήστρα είναι παρουσίαση στο τέλος. Δεν υπάρχει καλλιτεχνικός στόχος (ηχόχρωμα, σύνθεση, κριτήρια).</li>
+        <li><strong>M μισό:</strong> πίνακας μήκους–νότας, αλλά δεν ζητείται να βρουν μοτίβο ή να προβλέψουν.</li>
+        <li>Επίπεδο: <strong>πολυεπιστημονική προς διεπιστημονική</strong>. Τα βήματα είναι διαδοχικά, τα πεδία δεν «χρειάζονται» το ένα το άλλο.</li>
+      </ul>
+      <p><strong>Βήμα 2 · Εμπόδια.</strong></p>
+      <ul>
+        <li><strong>Νίκος:</strong> βήμα 3 και 5 (θόρυβος από όλες τις ομάδες ταυτόχρονα, απρόβλεπτοι ήχοι) · βήμα 2 (ομάδα τεσσάρων χωρίς ρόλους) · βήμα 1 (μόνο προφορικά, λιγότερο πρόβλημα για εκείνον).</li>
+        <li><strong>Ελένη:</strong> βήμα 3 (κόψιμο, κόλλα, μικρά κομμάτια) · βήμα 5 (γραπτό φύλλο στο τέλος, κούραση) · ίσως βήμα 4 (χειρισμός tablet και οργάνου ταυτόχρονα).</li>
+      </ul>
+      <p><strong>Βήμα 3 · Επανασχεδιασμός (ενδεικτικά, για όλη την τάξη).</strong></p>
+      <ul>
+        <li><span class="pr pr-eng">Εμπλοκή</span> Σαφείς ρόλοι στην ομάδα (σχεδιαστής, κατασκευαστής, μετρητής, μουσικός) με επιλογή · «ήσυχη γωνιά» και ωτοασπίδες διαθέσιμες σε όλους · πρόγραμμα των βημάτων ορατό στον πίνακα (8, 9).</li>
+        <li><span class="pr pr-rep">Αναπαράσταση</span> Ο ήχος ως δόνηση με εξερεύνηση (αφή σε τεντωμένο λαστιχάκι, οπτικοποίηση με εφαρμογή φασματογράφου) και όχι μόνο προφορικά · εικονογραφημένες κάρτες βημάτων (1, 3).</li>
+        <li><span class="pr pr-act">Δράση και Έκφραση</span> Προκομμένα υλικά, κλιπ αντί για κόλλα, μεγάλα κομμάτια · ο «αναστοχασμός» στο τέλος με επιλογή: γραπτά, προφορικά (ηχογράφηση), ή με σχέδιο (4, 5) · κύκλος δοκιμής–βελτίωσης με στόχο μια συγκεκριμένη νότα (6, και διορθώνει και το E).</li>
+      </ul>
+      <p>Επισήμανε ότι οι καλύτερες αλλαγές βελτιώνουν <strong>ταυτόχρονα</strong> και το STEAM (το E γίνεται πλήρες, το A αποκτά στόχο) και την πρόσβαση. Αυτή είναι η ουσία του «φακού».</p>
+    </div>
+
+    <div class="card c-sage">
+      <h3>Σημεία συζήτησης για τα παραδείγματα</h3>
+      <ul>
+        <li><strong>Aghasafari (2025):</strong> μια ποιοτική μελέτη περίπτωσης μπορεί να περιγράψει <em>πώς</em> συμμετείχαν οι μαθητές, όχι να αποδείξει ότι κάτι «βελτίωσε σημαντικά». Ρώτα: τι σχεδιασμό θα χρειαζόταν αυτός ο ισχυρισμός; Τι μπορεί να ισχυριστεί μια διπλωματική ΠΜΣ;</li>
+        <li><strong>Κωφοί μαθητές και κυκλική μόδα:</strong> ποιο είναι το A (σχεδιασμός ρούχων); Η κυκλική οικονομία είναι θεματικό περιεχόμενο, όχι γράμμα. Η επικοινωνία κωφών και ακουόντων: Αναπαράσταση · 2. Γλώσσα και σύμβολα.</li>
+        <li><strong>Burgos:</strong> το προσβάσιμο υλικό για τυφλούς μαθητές, αν το χρησιμοποιούν όλοι, είναι UDL. Αν δίνεται μόνο στους τυφλούς, είναι προσαρμογή.</li>
+        <li><strong>RoboSTEAMSEN:</strong> χωρίς A, είναι STEM. Καλή ευκαιρία να «ανάψουν» μόνοι/ες τους τα γράμματα.</li>
+      </ul>
+    </div>
+
+    <div class="box box-warn" style="max-width:46rem;">
+      <strong>Πριν από την ανάρτηση</strong>
+      <p>Άλλαξε τον κωδικό αυτής της σελίδας στο αρχείο <code>instructor.html</code> (γραμμή <code>INSTRUCTOR_PASSWORD</code>). Ο κωδικός προστατεύει μόνο από τυχαίους επισκέπτες: όποιος ανοίξει τον κώδικα της σελίδας τον βλέπει.</p>
+    </div>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand"><span class="hand">STEAM</span> · UDL · Ειδική Αγωγή</div>
+        <p class="footer-text">Ερευνώντας την STEAM Εκπαίδευση με τον Φακό του UDL: Πλαίσιο και Ερευνητικές Προοπτικές για Διπλωματικές Εργασίες. Τρίωρο σεμινάριο και υλικό αναφοράς.</p>
+        <p class="footer-text" style="margin-top:1rem;">Για το <a href="https://maspecialed.sed.uth.gr/" target="_blank" rel="noopener" style="color:var(--sun);">ΠΜΣ «Επιστήμες της Αγωγής: Ειδική Αγωγή», Πανεπιστήμιο Θεσσαλίας</a>.</p>
+        <p class="footer-text" style="margin-top:1rem;">Δημιουργός: Δρ. Δ.Ι. Σωτηρόπουλος. Η δομή, τα κείμενα και ο κώδικας αναπτύχθηκαν με τη βοήθεια του Claude (Anthropic) και ελέγχθηκαν από τον δημιουργό.</p>
+      </div>
+      <div>
+        <h5>Θεωρία</h5>
+        <ul>
+          <li><a href="steam.html">STEAM και διεπιστημονικότητα</a></li>
+          <li><a href="udl.html">Καθολικός Σχεδιασμός Μάθησης</a></li>
+          <li><a href="connection.html">Η σύνδεση στην ειδική αγωγή</a></li>
+          <li><a href="projects.html">Ευρωπαϊκά έργα</a></li>
+          <li><a href="methodology.html">Μεθοδολογία</a></li>
+          <li><a href="ai.html">Η ΤΝ ως βοηθός</a></li>
+          <li><a href="about.html">Πηγές &amp; σχετικά</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Σύνδεσμοι</h5>
+        <ul>
+          <li><a href="https://udlguidelines.cast.org/" target="_blank" rel="noopener">CAST UDL Guidelines 3.0</a></li>
+          <li><a href="https://www.scientix.eu/" target="_blank" rel="noopener">Scientix</a></li>
+          <li><a href="https://eproceedings.epublishing.ekt.gr/" target="_blank" rel="noopener">ΕΚΤ ePublishing (πρακτικά)</a></li>
+          <li><a href="https://www.eepek.gr/el" target="_blank" rel="noopener">Ε.Ε.Π.Ε.Κ.</a></li>
+          <li><a href="https://eric.ed.gov" target="_blank" rel="noopener">ERIC</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 · Ανοιχτό εκπαιδευτικό υλικό · CC BY-NC-SA 4.0</div>
+      <div>STEAM·UDL Edition · v1.0</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
